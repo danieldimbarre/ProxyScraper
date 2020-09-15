@@ -37,8 +37,7 @@ def Scraper():
 	os.system("wget -O PSsocks4.txt https://api.proxyscrape.com?request=getproxies&proxytype=socks4&timeout=10000&country=all")
 	os.system("wget -O PSsocks5.txt https://api.proxyscrape.com?request=getproxies&proxytype=socks4&timeout=10000&country=all")
 	os.system("wget -O githubList.txt https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/nixspam.ipset")
-	try:
-		os.system("wget -O tor.txt https://check.torproject.org/torbulkexitlist")
+	os.system("wget -O tor.txt https://check.torproject.org/torbulkexitlist")
 	try:
 		os.system("wget -O proxyS4.txt https://www.proxy-list.download/api/v1/get?type=socks4")
 		os.system("wget -O proxyS5.txt https://www.proxy-list.download/api/v1/get?type=socks5")
