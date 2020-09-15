@@ -36,8 +36,8 @@ def Scraper():
 	os.system("wget -O PShttp.txt https://api.proxyscrape.com?request=getproxies&proxytype=http&timeout=10000&country=all&anonymity=all&ssl=all")
 	os.system("wget -O PSsocks4.txt https://api.proxyscrape.com?request=getproxies&proxytype=socks4&timeout=10000&country=all")
 	os.system("wget -O PSsocks5.txt https://api.proxyscrape.com?request=getproxies&proxytype=socks4&timeout=10000&country=all")
-
-	Scraper = open("ScraperSocks.txt",'wb')
+	try:
+		os.system("wget -O tor.txt https://check.torproject.org/torbulkexitlist")
 	try:
 		os.system("wget -O proxyS4.txt https://www.proxy-list.download/api/v1/get?type=socks4")
 		os.system("wget -O proxyS5.txt https://www.proxy-list.download/api/v1/get?type=socks5")
@@ -57,7 +57,7 @@ def Scraper():
 		print("C")
 		pass
 
-	os.system("cat proxyS4.txt >> proxies.txt && cat proxyS5.txt >> proxies.txt && cat psS4.txt >> proxies.txt && cat SpeedS4.txt >> proxies.txt && cat Speed5.txt >> proxies.txt")
+	os.system("cat proxyS4.txt >> proxies.txt && cat proxyS5.txt >> proxies.txt && cat psS4.txt >> proxies.txt && cat SpeedS4.txt >> proxies.txt && cat Speed5.txt >> proxies.txt && cat tor.txt && proxies.txt")
 	with open("proxies.txt") as O, open("proxy.txt","w+") as B:
         	for line in O:
                 	word = ':'
