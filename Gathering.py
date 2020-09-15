@@ -33,9 +33,7 @@ def main():
     delay()
 	
 def Scraper():
-	os.system("wget -O PShttp.txt https://api.proxyscrape.com?request=getproxies&proxytype=http&timeout=10000&country=all&anonymity=all&ssl=all")
-	os.system("wget -O PSsocks4.txt https://api.proxyscrape.com?request=getproxies&proxytype=socks4&timeout=10000&country=all")
-	os.system("wget -O PSsocks5.txt https://api.proxyscrape.com?request=getproxies&proxytype=socks4&timeout=10000&country=all")
+	os.system("wget -O PSproxies.txt https://api.proxyscrape.com/?request=displayproxies&proxytype=all&timeout=all&country=all")
 	os.system("wget -O githubList.txt https://raw.githubusercontent.com/ktsaou/blocklist-ipsets/master/nixspam.ipset")
 	os.system("wget -O tor.txt https://check.torproject.org/torbulkexitlist")
 	try:
@@ -57,7 +55,7 @@ def Scraper():
 		print("C")
 		pass
 
-	os.system("cat githubList.txt >> proxies.txt && cat proxyS4.txt >> proxies.txt && cat proxyS5.txt >> proxies.txt && cat psS4.txt >> proxies.txt && cat SpeedS4.txt >> proxies.txt && cat Speed5.txt >> proxies.txt && cat tor.txt && proxies.txt")
+	os.system("cat PSproxies.txt >> proxies.txt && cat githubList.txt >> proxies.txt && cat proxyS4.txt >> proxies.txt && cat proxyS5.txt >> proxies.txt && cat psS4.txt >> proxies.txt && cat SpeedS4.txt >> proxies.txt && cat Speed5.txt >> proxies.txt && cat tor.txt && proxies.txt")
 	with open("proxies.txt") as O, open("proxy.txt","w+") as B:
         	for line in O:
                 	word = ':'
