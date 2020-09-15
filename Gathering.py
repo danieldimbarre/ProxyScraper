@@ -55,7 +55,7 @@ def Scraper():
 		print("C")
 		pass
 
-	os.system("cat PSproxies.txt >> proxies.txt && cat githubList.txt >> proxies.txt && cat proxyS4.txt >> proxies.txt && cat proxyS5.txt >> proxies.txt && cat psS4.txt >> proxies.txt && cat SpeedS4.txt >> proxies.txt && cat Speed5.txt >> proxies.txt && cat tor.txt && proxies.txt")
+	os.system("cat PSproxies.txt >> proxies.txt && cat githubList.txt >> proxies.txt && cat proxyS4.txt >> proxies.txt && cat proxyS5.txt >> proxies.txt && cat psS4.txt >> proxies.txt && cat SpeedS4.txt >> proxies.txt && cat Speed5.txt >> proxies.txt && cat tor.txt >> proxies.txt")
 	with open("proxies.txt") as O, open("proxy.txt","w+") as B:
         	for line in O:
                 	word = ':'
