@@ -18,7 +18,7 @@ async def save(proxies, filename):
             if proxy is None:
                 break
             proto = 'https' if 'HTTPS' in proxy.types else 'http'
-            row = '%s:%d\n' % (proxy.host, proxy.port)
+            row = '%s\n' % (proxy.host)
             f.write(row)
             print(Fore.WHITE + "Proxy Found - " + Fore.GREEN + str(proxy))
 
@@ -62,7 +62,11 @@ def Scraper():
                 	replace_with = ''
                 	occurrance  = 1
                 	B.write(word.join(line.split(word)[:occurrance]) + "\n")
+	os.system("sh blacklist.sh")
 	main()
+	
+
+
 
 Scraper()
 
